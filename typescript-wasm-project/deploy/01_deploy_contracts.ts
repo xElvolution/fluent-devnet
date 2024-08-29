@@ -18,7 +18,8 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   // Deploying WASM Contract
   console.log("Deploying WASM contract...");
   const wasmBinaryPath = "./greeting/bin/greeting.wasm";
-  const provider = new ethers.providers.JsonRpcProvider(network.config.url);
+  const config = network.config as HttpNetworkConfig;
+  const provider = new ethers.JsonRpcProvider(config.url);
   const deployer = new ethers.Wallet(DEPLOYER_PRIVATE_KEY, provider);
 
   const fluentGreetingContractAddress = await deployWasmContract(wasmBinaryPath, deployer, provider, getOrNull, save);

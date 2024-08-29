@@ -1,0 +1,95 @@
+{
+  "address": "0xa375Eb2BA2B6F672Ac845Ab21634112a4122Bc99",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_fluentGreetingContractAddress",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "fluentGreetingContract",
+      "outputs": [
+        {
+          "internalType": "contract IFluentGreeting",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getGreeting",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xebea1381eda42d3276b482ac13dc93e6d277c2a5d99320454fd6b9eb94397fdc",
+  "receipt": {
+    "to": null,
+    "from": "0x9dE1719Fc537a5297ab5BDE06641E7D8A7F5B997",
+    "contractAddress": "0xa375Eb2BA2B6F672Ac845Ab21634112a4122Bc99",
+    "transactionIndex": 0,
+    "gasUsed": "220728",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0xa8abe77c2c4695ab39cac37196e34a63cc5aacf251216bd6c341bdf103d809cd",
+    "transactionHash": "0xebea1381eda42d3276b482ac13dc93e6d277c2a5d99320454fd6b9eb94397fdc",
+    "logs": [],
+    "blockNumber": 9379,
+    "cumulativeGasUsed": "220728",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0x93922BD5d6BddD9D7C1d2837F2B61E41C14959e7"
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "a516a9a1e109d8c4c5fa3951df6a5e78",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.24+commit.e11b9ed9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_fluentGreetingContractAddress\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"fluentGreetingContract\",\"outputs\":[{\"internalType\":\"contract IFluentGreeting\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getGreeting\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/GreetingWithWorld.sol\":\"GreetingWithWorld\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/GreetingWithWorld.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.20;\\n\\nimport \\\"./IFluentGreeting.sol\\\";\\n\\ncontract GreetingWithWorld {\\n    IFluentGreeting public fluentGreetingContract;\\n\\n    constructor(address _fluentGreetingContractAddress) {\\n        fluentGreetingContract = IFluentGreeting(_fluentGreetingContractAddress);\\n    }\\n\\n    function getGreeting() external view returns (string memory) {\\n        string memory greeting = fluentGreetingContract.greeting();\\n        return string(abi.encodePacked(greeting, \\\", World\\\"));\\n    }\\n}\\n\",\"keccak256\":\"0xebe49af527411823e00a81161883f00499fc19bc63df51cf56e4db70f9f2d75e\",\"license\":\"MIT\"},\"contracts/IFluentGreeting.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.20;\\n\\ninterface IFluentGreeting {\\n    function greeting() external view returns (string memory);\\n}\\n\",\"keccak256\":\"0xaddbb3e9e326a7ed2e5110f15a736450cc827199d78456826a549163fdda8f88\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060405161032938038061032983398101604081905261002f91610054565b600080546001600160a01b0319166001600160a01b0392909216919091179055610084565b60006020828403121561006657600080fd5b81516001600160a01b038116811461007d57600080fd5b9392505050565b610296806100936000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c8063a78b25041461003b578063fe50cc721461006b575b600080fd5b60005461004e906001600160a01b031681565b6040516001600160a01b0390911681526020015b60405180910390f35b610073610080565b604051610062919061013f565b60008054604080516303bda43360e61b81529051606093926001600160a01b03169163ef690cc091600480830192869291908290030181865afa1580156100cb573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f191682016040526100f39190810190610188565b9050806040516020016101069190610235565b60405160208183030381529060405291505090565b60005b8381101561013657818101518382015260200161011e565b50506000910152565b602081526000825180602084015261015e81604085016020870161011b565b601f01601f19169190910160400192915050565b634e487b7160e01b600052604160045260246000fd5b60006020828403121561019a57600080fd5b815167ffffffffffffffff808211156101b257600080fd5b818401915084601f8301126101c657600080fd5b8151818111156101d8576101d8610172565b604051601f8201601f19908116603f0116810190838211818310171561020057610200610172565b8160405282815287602084870101111561021957600080fd5b61022a83602083016020880161011b565b979650505050505050565b6000825161024781846020870161011b565b660b0815dbdc9b1960ca1b92019182525060070191905056fea26469706673582212202f9b46955b13c1fd473fd2ea71f55b12fa705551a706da5a94b3f462608cf8ed64736f6c63430008180033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c8063a78b25041461003b578063fe50cc721461006b575b600080fd5b60005461004e906001600160a01b031681565b6040516001600160a01b0390911681526020015b60405180910390f35b610073610080565b604051610062919061013f565b60008054604080516303bda43360e61b81529051606093926001600160a01b03169163ef690cc091600480830192869291908290030181865afa1580156100cb573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f191682016040526100f39190810190610188565b9050806040516020016101069190610235565b60405160208183030381529060405291505090565b60005b8381101561013657818101518382015260200161011e565b50506000910152565b602081526000825180602084015261015e81604085016020870161011b565b601f01601f19169190910160400192915050565b634e487b7160e01b600052604160045260246000fd5b60006020828403121561019a57600080fd5b815167ffffffffffffffff808211156101b257600080fd5b818401915084601f8301126101c657600080fd5b8151818111156101d8576101d8610172565b604051601f8201601f19908116603f0116810190838211818310171561020057610200610172565b8160405282815287602084870101111561021957600080fd5b61022a83602083016020880161011b565b979650505050505050565b6000825161024781846020870161011b565b660b0815dbdc9b1960ca1b92019182525060070191905056fea26469706673582212202f9b46955b13c1fd473fd2ea71f55b12fa705551a706da5a94b3f462608cf8ed64736f6c63430008180033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 5,
+        "contract": "contracts/GreetingWithWorld.sol:GreetingWithWorld",
+        "label": "fluentGreetingContract",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_contract(IFluentGreeting)47"
+      }
+    ],
+    "types": {
+      "t_contract(IFluentGreeting)47": {
+        "encoding": "inplace",
+        "label": "contract IFluentGreeting",
+        "numberOfBytes": "20"
+      }
+    }
+  }
+}
